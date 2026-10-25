@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tĩnh Tâm — Quán trà đạo</title>
+<meta name="description" content="Tĩnh Tâm — quán trà đạo theo tinh thần tĩnh lặng: trà cụ thủ công, nước pha đúng độ, không gian yên ắng để chậm lại và lắng nghe chính mình.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F0E1; --bg2:#EAE2CC; --ink:#1F3327; --muted:#5A6B5E;
+    --accent:#A67C52; --accent2:#C4A87E; --dark:#1F3327;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Be Vietnam Pro",sans-serif;font-size:16.5px;line-height:1.7;color:var(--ink);background:var(--bg)}
+  h1,h2,h3,.serif{font-family:"Cormorant Garamond",serif;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  img{display:block;width:100%;object-fit:cover}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  .label{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .steam{display:block;width:22px;height:44px;margin:0 auto 14px}
+  .steam path{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round}
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--bg2)}
+  .header-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:700;letter-spacing:.06em}
+  .logo .steam{margin:0;width:16px;height:32px}
+  nav{display:flex;gap:22px;font-size:15px}
+  nav a:hover{color:var(--accent)}
+  .btn{display:inline-block;padding:12px 26px;border-radius:999px;font-size:15px;font-weight:500;cursor:pointer;border:1.5px solid var(--accent);transition:.2s}
+  .btn-primary{background:var(--accent);color:#FFF8EC}
+  .btn-primary:hover{background:#8F6A44}
+  .btn-ghost{background:transparent;color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--accent2);color:var(--accent)}
+  .btn-light{background:transparent;color:#F5F0E1;border-color:#F5F0E1}
+  /* Hero */
+  .hero{position:relative;height:100vh;min-height:560px;display:flex;align-items:flex-end;overflow:hidden}
+  .hero img{position:absolute;inset:0;height:100%}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(31,51,39,.62) 0%,rgba(31,51,39,.18) 55%,rgba(31,51,39,.05) 100%)}
+  .hero-text{position:relative;z-index:1;color:#F5F0E1;padding:0 24px 84px;max-width:1060px;margin:0 auto;width:100%}
+  .hero-text h1{font-size:56px;line-height:1.15;max-width:640px}
+  .hero-text p{margin:18px 0 26px;max-width:560px;font-size:17px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  /* Sections */
+  section{padding:96px 0}
+  section.alt{background:var(--bg2)}
+  section h2{font-size:34px;text-align:center;line-height:1.3}
+  section .lead{text-align:center;color:var(--muted);margin:12px 0 44px}
+  /* Philosophy */
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .cols3 h3{font-size:24px;margin-bottom:8px}
+  .cols3 p{color:var(--muted);font-size:15.5px}
+  /* Experiences */
+  .exp-card{background:var(--bg);border:1px solid var(--accent2);border-radius:16px;overflow:hidden;margin-bottom:36px}
+  .exp-card img{aspect-ratio:16/10}
+  .exp-body{padding:28px 30px 32px}
+  .exp-body h3{font-size:28px}
+  .exp-body p{color:var(--muted);margin:8px 0 14px}
+  .price{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:22px;color:var(--accent)}
+  .exp-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px}
+  /* Space */
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  figure img{border:1px solid var(--accent2);border-radius:12px}
+  figure .img-space{aspect-ratio:4/3}
+  figure .img-teaware{aspect-ratio:3/2}
+  figcaption{font-size:14px;color:var(--muted);margin-top:10px;text-align:center}
+  /* Schedule + story */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .sched{width:100%;border-collapse:collapse;font-size:15.5px}
+  .sched th,.sched td{padding:12px 14px;border-bottom:1px solid var(--accent2);text-align:left}
+  .sched th{font-weight:500;color:var(--muted)}
+  .story img{aspect-ratio:4/5;border:1px solid var(--accent2);border-radius:12px;max-width:380px;margin:0 auto}
+  .story blockquote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.5;margin:22px 0 12px}
+  .story p{color:var(--muted);font-size:15.5px}
+  .story .steam{margin-top:24px}
+  /* Forms */
+  .forms{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  form{background:var(--bg2);border:1px solid var(--accent2);border-radius:16px;padding:28px}
+  form h3{font-size:26px;margin-bottom:18px}
+  form label{display:block;font-size:14px;font-weight:500;margin:14px 0 6px}
+  form input,form select,form textarea{width:100%;padding:11px 13px;border:1px solid var(--accent2);border-radius:10px;background:#FFFDF6;font-family:inherit;font-size:15px;color:var(--ink)}
+  form textarea{resize:vertical;min-height:90px}
+  form .btn{margin-top:20px;width:100%;text-align:center}
+  .form-note{font-size:13.5px;color:var(--muted);text-align:center;margin-top:12px}
+  .form-ok{display:none;font-size:14.5px;color:#2F5D3A;background:#EAF3E8;border:1px solid #BFD8BA;border-radius:10px;padding:10px 14px;margin-top:14px}
+  .contact-lines{margin-top:28px;font-size:15.5px}
+  .contact-lines p{margin:6px 0}
+  .contact-lines b{font-weight:500}
+  /* Footer */
+  footer{background:var(--dark);color:#F5F0E1;padding:56px 0 32px}
+  .foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .foot-grid .logo{color:#F5F0E1}
+  .foot-grid nav{display:flex;flex-direction:column;gap:8px;font-size:15px}
+  .foot-grid nav a:hover{color:var(--accent2)}
+  .foot-meta{font-size:14.5px;color:#C9CFC2}
+  .foot-meta p{margin:5px 0}
+  .foot-bottom{margin-top:36px;padding-top:20px;border-top:1px solid rgba(245,240,225,.25);font-size:13.5px;color:#C9CFC2;text-align:center}
+  @media (max-width:768px){
+    section{padding:56px 0}
+    nav{display:none}
+    .hero-text{padding-bottom:56px}
+    .hero-text h1{font-size:32px}
+    section h2{font-size:26px}
+    .cols3,.gallery,.split,.forms{grid-template-columns:1fr}
+    .gallery figure:first-child{order:0}
+    .split img,.story img{margin-bottom:8px}
+    .exp-body{padding:22px 20px 26px}
+    form{padding:22px 18px}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="steam" viewBox="0 0 24 48">
+      <path d="M12 46 C 6 36, 18 30, 12 20 C 6 10, 18 4, 12 -2" />
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="header-in">
+    <a class="logo" href="#top"><svg class="steam"><use href="#steam"/></svg>TĨNH TÂM</a>
+    <nav>
+      <a href="#triet-ly">Triết lý</a>
+      <a href="#trai-nghiem">Trải nghiệm</a>
+      <a href="#khong-gian">Không gian</a>
+      <a href="#lich-tra">Lịch trà</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+    <a class="btn btn-primary" href="#dat-lich">Đặt lịch trải nghiệm</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 2. Hero -->
+  <section class="hero" style="padding:0">
+    <img src="https://booktheholidays.co.uk/uploads/2026/08/traditional-japanese-tea-ceremony-setup-in-a-kyoto-room-with-a-view-of-a-moss-garden-best-cities-to-visit-for-culture-top-destinations-for.webp" alt="Trà thất Kyoto nhìn ra vườn rêu, bộ trà đạo đã bày sẵn">
+    <div class="hero-text">
+      <h1>Một chén trà, một khoảng lặng.</h1>
+      <p>Trà cụ thủ công, nước pha đúng độ, không gian yên ắng để chậm lại và lắng nghe chính mình.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#trai-nghiem">Xem trải nghiệm</a>
+        <a class="btn btn-light" href="#cau-chuyen">Câu chuyện người pha trà</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Triết lý -->
+  <section id="triet-ly">
+    <div class="wrap">
+      <svg class="steam"><use href="#steam"/></svg>
+      <h2>Trà đạo là dừng lại</h2>
+      <p class="lead">Mỗi buổi trà là một khoảng dừng giữa nhịp sống vội.</p>
+      <div class="cols3">
+        <div>
+          <h3>Trà cụ thủ công</h3>
+          <p>Ấm, chén gốm làm tay — mỗi chiếc mang dấu tay người nặn, không chiếc nào giống chiếc nào.</p>
+        </div>
+        <div>
+          <h3>Nước pha đúng độ</h3>
+          <p>Nhiệt độ và thời gian hãm đúng từng loại trà, để lá trà mở ra trọn vẹn hương vị của nó.</p>
+        </div>
+        <div>
+          <h3>Không gian yên ắng</h3>
+          <p>Trà thất tĩnh lặng, không ồn ào — chỉ còn tiếng nước sôi và hơi trà bốc lên.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Trải nghiệm -->
+  <section id="trai-nghiem" class="alt">
+    <div class="wrap">
+      <svg class="steam"><use href="#steam"/></svg>
+      <h2>Các trải nghiệm</h2>
+      <p class="lead">Ba cách thưởng trà, cùng một sự chậm rãi.</p>
+
+      <article class="exp-card">
+        <img src="https://atsco-eg.com/wp-content/uploads/2025/04/chinese-tea-ceremony-PSCNADY-scaled-1.jpg" alt="Buổi trà đạo truyền thống với bộ ấm chén gốm, hơi trà bốc lên">
+        <div class="exp-body">
+          <h3>Trà đạo truyền thống</h3>
+          <p>Nghi thức trà đạo đầy đủ: từ cách tráng ấm, hãm trà đến cách nâng chén — chậm, đúng và tĩnh.</p>
+          <div class="exp-foot">
+            <span class="price">từ 250.000đ/người (giá mẫu)</span>
+            <a class="btn btn-primary" href="#dat-lich">Đặt trải nghiệm này</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="exp-card">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/072/927/206/small_2x/aromatic-cup-of-tea-bathed-in-sunlight-photo.jpg" alt="Chén trà nóng bốc hơi dưới nắng mai bên cửa sổ">
+        <div class="exp-body">
+          <h3>Trà chiều tĩnh lặng</h3>
+          <p>Một buổi chiều không vội: chén trà nóng, bánh ngọt nhẹ và khoảng lặng dành riêng cho chính mình.</p>
+          <div class="exp-foot">
+            <span class="price">từ 180.000đ/người (giá mẫu)</span>
+            <a class="btn btn-primary" href="#dat-lich">Đặt trải nghiệm này</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="exp-card">
+        <img src="https://kseniakell.com/announcements/friendship2026/friends.jpg" alt="Nhóm bạn quây quần bên ấm trà ấm cúng">
+        <div class="exp-body">
+          <h3>Trà cùng người thân</h3>
+          <p>Buổi trà dành cho những người thương: cùng ngồi xuống, cùng rót trà, cùng kể nhau nghe một ngày đã qua.</p>
+          <div class="exp-foot">
+            <span class="price">Giá: [CẦN BỔ SUNG]</span>
+            <a class="btn btn-primary" href="#dat-lich">Đặt trải nghiệm này</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. Không gian + trà cụ -->
+  <section id="khong-gian">
+    <div class="wrap">
+      <svg class="steam"><use href="#steam"/></svg>
+      <h2>Không gian và trà cụ</h2>
+      <p class="lead">Gỗ sáng, gốm mộc và hơi trà — mọi thứ đều lặng.</p>
+      <div class="gallery">
+        <figure>
+          <img class="img-space" src="https://fushengjin.cn/public/images/chess-room/scene-tea-v1.webp" alt="Phòng trà gỗ trầm với bàn trà thấp và ánh sáng ấm dịu">
+          <figcaption>Trà thất gỗ sáng, yên ắng buổi sớm — nơi mỗi buổi trà bắt đầu.</figcaption>
+        </figure>
+        <figure>
+          <img class="img-teaware" src="https://i.etsystatic.com/59447973/r/il/7f67bf/7692382183/il_1588xN.7692382183_mxvu.jpg" alt="Bộ ấm chén sứ Nhật làm tay, men mộc mạc">
+          <figcaption>Trà cụ gốm làm tay — ấm, chén sứ men mộc, mỗi chiếc một dáng riêng.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Lịch trà + câu chuyện -->
+  <section id="lich-tra" class="alt">
+    <div class="wrap">
+      <svg class="steam"><use href="#steam"/></svg>
+      <h2>Lịch trà và người pha trà</h2>
+      <p class="lead">Lịch mẫu trong ngày và câu chuyện của người giữ lửa cho trà thất.</p>
+      <div class="split">
+        <div>
+          <h3 class="serif" style="font-size:26px;margin-bottom:14px">Lịch trà mẫu</h3>
+          <table class="sched">
+            <tr><th>Buổi</th><th>Giờ</th><th>Trải nghiệm</th></tr>
+            <tr><td>Buổi sáng</td><td>8:00 – 11:00</td><td>Trà đạo truyền thống</td></tr>
+            <tr><td>Buổi chiều</td><td>14:00 – 17:00</td><td>Trà chiều tĩnh lặng</td></tr>
+            <tr><td>Cuối tuần</td><td>9:00 – 12:00</td><td>Trà cùng người thân</td></tr>
+          </table>
+          <p style="font-size:14px;color:var(--muted);margin-top:10px">Bảng giờ trên chỉ là lịch mẫu minh họa.</p>
+        </div>
+        <div class="story" id="cau-chuyen">
+          <h3 class="serif" style="font-size:26px;margin-bottom:14px">Câu chuyện người pha trà</h3>
+          <img src="https://d836lkh8rtxff.cloudfront.net/1165895047791444/original/ce5b7780-7aba-11ed-9cae-c7e189fba2de-809.jpeg" alt="Người pha trà đang rót trà từ ấm gốm, hơi trà bốc lên">
+          <blockquote>“Pha trà không vội được. Nước phải đúng độ, tay phải chậm, lòng phải lặng — trà mới chịu mở hương.”</blockquote>
+          <p>Người pha trà của Tĩnh Tâm — [CẦN BỔ SUNG] — vẫn giữ thói quen dậy sớm nhóm bếp, chọn lá trà theo mùa và rót từng ấm trà như một nghi thức nhỏ mỗi ngày.</p>
+          <svg class="steam"><use href="#steam"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Form -->
+  <section id="dat-lich">
+    <div class="wrap">
+      <svg class="steam"><use href="#steam"/></svg>
+      <h2>Đặt lịch trải nghiệm</h2>
+      <p class="lead">Chọn ngày, giờ và số người — còn lại để trà thất lo.</p>
+      <div class="forms">
+        <form id="form-dat-lich">
+          <h3>Đặt lịch trải nghiệm</h3>
+          <label for="ngay">Ngày trải nghiệm</label>
+          <input type="date" id="ngay" name="ngay" required>
+          <label for="gio">Giờ</label>
+          <select id="gio" name="gio" required>
+            <option value="">— Chọn giờ —</option>
+            <option>8:00</option><option>9:00</option><option>10:00</option>
+            <option>14:00</option><option>15:00</option><option>16:00</option>
+          </select>
+          <label for="songuoi">Số người</label>
+          <input type="number" id="songuoi" name="songuoi" min="1" max="20" value="2" required>
+          <label for="ghichu">Ghi chú</label>
+          <textarea id="ghichu" name="ghichu" placeholder="Ví dụ: muốn ngồi gần cửa sổ, dị ứng đồ ngọt…"></textarea>
+          <button class="btn btn-primary" type="submit">Gửi yêu cầu đặt lịch</button>
+          <p class="form-note">Form chỉ là giao diện minh họa, chưa gửi thật</p>
+          <div class="form-ok" id="ok-dat-lich">Đã ghi nhận yêu cầu minh họa. Tĩnh Tâm sẽ liên hệ khi form chính thức hoạt động.</div>
+        </form>
+
+        <div id="lien-he">
+          <form id="form-lien-he">
+            <h3>Liên hệ</h3>
+            <label for="hoten">Họ tên</label>
+            <input type="text" id="hoten" name="hoten" placeholder="Họ tên của bạn" required>
+            <label for="sdt">Số điện thoại</label>
+            <input type="tel" id="sdt" name="sdt" placeholder="Số điện thoại liên hệ" required>
+            <label for="noidung">Nội dung</label>
+            <textarea id="noidung" name="noidung" placeholder="Bạn muốn hỏi gì về Tĩnh Tâm?" required></textarea>
+            <button class="btn btn-primary" type="submit">Gửi liên hệ</button>
+            <p class="form-note">Form chỉ là giao diện minh họa, chưa gửi thật</p>
+            <div class="form-ok" id="ok-lien-he">Đã ghi nhận liên hệ minh họa. Cảm ơn bạn đã ghé Tĩnh Tâm.</div>
+          </form>
+          <div class="contact-lines">
+            <p><b>Địa chỉ:</b> [CẦN BỔ SUNG]</p>
+            <p><b>Điện thoại:</b> [CẦN BỔ SUNG]</p>
+            <p><b>Email:</b> [CẦN BỔ SUNG]</p>
+            <p><b>Giờ mở cửa:</b> [CẦN BỔ SUNG]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <a class="logo" href="#top"><svg class="steam" style="width:16px;height:32px"><use href="#steam"/></svg>TĨNH TÂM</a>
+      <nav>
+        <a href="#triet-ly">Triết lý</a>
+        <a href="#trai-nghiem">Trải nghiệm</a>
+        <a href="#khong-gian">Không gian</a>
+        <a href="#lich-tra">Lịch trà</a>
+        <a href="#lien-he">Liên hệ</a>
+      </nav>
+      <div class="foot-meta">
+        <p><b>Giờ mở cửa:</b> [CẦN BỔ SUNG]</p>
+        <p><b>Liên hệ:</b> [CẦN BỔ SUNG]</p>
+      </div>
+    </div>
+    <p class="foot-bottom">Ảnh và giá trên trang chỉ là mẫu minh họa cho bản demo.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('form-dat-lich').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('ok-dat-lich').style.display = 'block';
+  });
+  document.getElementById('form-lien-he').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('ok-lien-he').style.display = 'block';
+  });
+</script>
+</body>
+</html>
